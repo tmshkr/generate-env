@@ -18,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: tmshkr/handle-env@v1
+      - uses: tmshkr/handle-env@v1.1
         with:
           env: |
             FOO_VAR=42
             BAR_VAR=43
             BAZ_VAR=44
             SECRET_VAR=${{ secrets.SECRET_VAR }}
-      - name: Print env vars
+      - name: Print .env file
         run: cat .env
 ```
