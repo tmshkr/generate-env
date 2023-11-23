@@ -13,6 +13,7 @@ jobs:
           WAIT_FOR_CONNECTION: true
       - uses: ./
         with:
+          delete: false
           env: |
             FOO_VAR=42
             BAR_VAR=43
