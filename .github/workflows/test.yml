@@ -1,0 +1,19 @@
+name: handle-env
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: tmshkr/ngrok-ssh@v1
+        with:
+          NGROK_AUTHTOKEN: ${{ secrets.NGROK_AUTHTOKEN }}
+          WAIT_FOR_CONNECTION: true
+      - uses: ./
+        with:
+          env: |
+            FOO_VAR=42
+            BAR_VAR=43
+            BAZ_VAR=44

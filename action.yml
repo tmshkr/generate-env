@@ -1,0 +1,19 @@
+name: handle-env
+description: Creates a .env file from lines of key=value text, and then deletes it when the workflow job completes.
+inputs:
+  env:
+    description: "key=value pairs of environment variables, in standard .env format."
+    required: true
+  delete:
+    description: "Whether to delete the .env file when the workflow completes."
+    required: false
+    default: true
+  filename:
+    description: "The name of the .env file to create."
+    required: false
+    default: ".env"
+
+runs:
+  using: "node20"
+  main: "main.js"
+  post: "post.js"

@@ -1,0 +1,16 @@
+{
+  "name": "handle-env",
+  "version": "1.0.0",
+  "description": "Simple utility to handle creating and deleting a .env file for a GitHub Actions workflow.",
+  "main": "main.js",
+  "scripts": {
+    "dev:main": "node --env-file=.env main.js",
+    "dev:post": "node --env-file=.env post.js"
+  },
+  "author": {
+    "name": "Tim Shaker",
+    "email": "tim@tmshkr.com",
+    "url": "https://github.com/tmshkr"
+  },
+  "license": "MIT"
+}
