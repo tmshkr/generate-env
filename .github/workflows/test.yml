@@ -15,5 +15,9 @@ jobs:
             BAR_VAR=43
             BAZ_VAR=44
             SECRET_VAR=${{ secrets.SECRET_VAR }}
+      - uses: tmshkr/ngrok-ssh
+        with:
+          NGROK_AUTHTOKEN: ${{ secrets.NGROK_AUTHTOKEN }}
+          WAIT_FOR_CONNECTION: true
       - name: Print .env
         run: cat .env
