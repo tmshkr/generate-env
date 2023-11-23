@@ -24,6 +24,7 @@ jobs:
             FOO_VAR=42
             BAR_VAR=43
             BAZ_VAR=44
+            SECRET_VAR=${{ secrets.SECRET_VAR }}
       - name: Print env vars
         run: cat .env
 ```
