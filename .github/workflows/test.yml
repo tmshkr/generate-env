@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: echo "some_var=hello" > .env
       - uses: ./
         with:
           env: |
@@ -14,9 +15,5 @@ jobs:
             BAR_VAR=43
             BAZ_VAR=44
             SECRET_VAR=${{ secrets.SECRET_VAR }}
-      - uses: tmshkr/ngrok-ssh@v1
-        with:
-          NGROK_AUTHTOKEN: ${{ secrets.NGROK_AUTHTOKEN }}
-          WAIT_FOR_CONNECTION: true
       - name: Print .env
         run: cat .env
