@@ -3,7 +3,7 @@ const { execSync } = require("child_process");
 
 const { INPUT_DELETE, INPUT_FILENAME, GITHUB_WORKSPACE } = process.env;
 
-if (INPUT_DELETE) {
+if (INPUT_DELETE === "true") {
   try {
     const filepath = path.join(GITHUB_WORKSPACE, INPUT_FILENAME);
     console.log("Deleting file...");
