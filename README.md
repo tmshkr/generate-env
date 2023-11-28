@@ -1,6 +1,6 @@
 # handle-env
 
-Simple utility to handle creating and deleting a .env file for a GitHub Actions workflow.
+Simple utility to handle creating and deleting the .env file for a GitHub Actions workflow.
 
 The .env file will be available to subsequent steps in the workflow, and then (optionally) deleted at the end of the job with [shred](<https://en.wikipedia.org/wiki/Shred_(Unix)>).
 
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: tmshkr/handle-env@v1.1
+      - uses: tmshkr/handle-env@v1.2
         with:
           env: |
             FOO_VAR=42
