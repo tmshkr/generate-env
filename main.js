@@ -6,11 +6,11 @@ const { INPUT_ENV, INPUT_FILENAME, GITHUB_WORKSPACE } = process.env;
 try {
   const filepath = path.join(GITHUB_WORKSPACE, INPUT_FILENAME);
   if (fs.existsSync(filepath)) {
-    console.log("File already exists. Appending...");
+    console.log(`${INPUT_FILENAME} already exists. Appending...`);
     fs.appendFileSync(filepath, "\n" + INPUT_ENV);
     console.log(`Updated ${filepath}`);
   } else {
-    console.log("File does not exist. Creating...");
+    console.log(`Creating ${INPUT_FILENAME}`);
     fs.writeFileSync(filepath, INPUT_ENV);
     console.log(`Created ${filepath}`);
   }
