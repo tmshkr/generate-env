@@ -28,3 +28,11 @@ jobs:
       - name: Print .env file
         run: cat .env
 ```
+
+## The `.wait` file
+
+Before the action deletes the .env file, it will look for a `.wait` file in the `$GITHUB_WORKSPACE` directory.
+
+If the `.wait` file exists, the action will wait for that file to be deleted before deleting the .env file.
+
+This can be useful when debugging a workflow, so that you can use or inspect the .env file before it is deleted.
