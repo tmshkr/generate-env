@@ -1,5 +1,5 @@
 name: handle-env
-description: Creates a .env file from your provided YAML multiline string of key=value pairs, and then destroys it when the workflow job completes.
+description: Creates a .env file from a multiline string of key=value pairs, and then destroys it when the workflow job completes.
 inputs:
   env:
     description: "key=value pairs of environment variables, in standard .env format."
