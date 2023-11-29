@@ -12,6 +12,9 @@ inputs:
     description: "The name of the .env file to create."
     required: false
     default: ".env"
+  secret_keys:
+    description: "Comma-separated list of keys with secret values to mask in the workflow log."
+    required: false
 
 runs:
   using: "node20"
